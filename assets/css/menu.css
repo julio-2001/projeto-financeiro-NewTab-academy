@@ -1,0 +1,78 @@
+.header-cotr .menu{
+
+    background: #e0e0e0;
+    width: 100%;
+    height: 60px;
+}
+
+.header-cotr .menu .menu_logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-cotr .menu{
+    justify-content: center;
+    align-items: center;
+}
+
+.header-cotr .menu .menu_logo img{
+    width: 30px;
+    height: 27.63px;
+    margin-left: 22px;
+    margin-top: 15px;
+    
+}
+
+.header-cotr .menu .menu_logo h1{
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-top: 15px;
+    line-height: 24px;
+
+}
+
+.header-cotr .menu .menu_logo .menu_shape{
+    display: block;
+    align-items: center;
+    margin-top: 15px;
+    margin-right: 21px;
+}
+
+.header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_cima{
+    width: 18px;
+    height: 2px;
+    background: #333333;
+    
+    
+}
+
+.header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_frontal{
+    width: 18px;
+    height: 2px;
+    background:#333333;
+    margin-top: 3px;
+}
+
+.header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_baixo{
+    width: 18px;
+    height: 2px;
+    background: #333333;
+    margin-top: 3px;
+
+}
+
+
+.header-cotr .menu .menu_logo_shape a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 15px 0;
+    color:#333333;
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
