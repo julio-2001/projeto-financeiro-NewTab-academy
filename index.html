@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Projeto financeiro </title>
-    <link rel="stylesheet" href="assets/css/container.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/container.css">
 </head>
 <body>
 
@@ -15,6 +15,7 @@
 
 <!---------------- Parte superior  ------------------->
     <header class="header-cotr">
+        
         <div class="menu">
 
             <div class="menu_logo">
@@ -24,18 +25,24 @@
 
                     <!--- Parte navbar do mobile -->  
 
-                <nav>
+                <nav   id="hamburguer"      onclick="active()" >
                     <a href="/"></a> 
+
+
                 <div class="menu_shape">
-                    <div class="menu_shape_linha_cima"></div>
-                    <div class="menu_shape_linha_frontal"></div>
-                    <div class="menu_shape_linha_baixo"></div>
+
+                    
+                    <div id="menu_shape_item"  class="menu_shape_linha_cima"></div>
+                    <div id="menu_shape_item"  class="menu_shape_linha_frontal"></div>
+                    <div id="menu_shape_item"  class="menu_shape_linha_baixo"></div>
+
+                    
                 </div>
 
                <ul class="menu_navbar_list">
 
-                    <li id="menu_navbar_lista_item1" ><a href="/"></a>Cadastrar transações </li>
-                    <li id="menu_navbar_lista_item2" ><a style="color: white;"  href="/"></a>Limpar dados </li>
+                    <li id="menu_navbar_lista_item1" ><a href="#"></a>Cadastrar transações </li>
+                    <li id="menu_navbar_lista_item2" ><a  href="#"></a>Limpar dados </li>
     
                 </ul>
 
@@ -43,16 +50,7 @@
                 </nav>
 
             </div>
-
-
-
         </div>
-
-       
-
-       
-      
-
     </header>
 
  
@@ -205,7 +203,8 @@
     
 
 
-<script src="assets/arquivos.js/mobile-navbar.js"></script>
+<script src="mobile-navbar.js"></script>
+<script src="teste-navbar-.js"></script>
 
 
 </body>
