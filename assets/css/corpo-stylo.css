@@ -1,24 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-body{
-    font-family: 'lato', sans-serif;
-    
-}
-
-
 
 *{
-
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-
-
-html{   /* body*/
-    overflow: hidden;
+body{
+    font-family: 'lato', sans-serif;
 }
 
-main{
-margin: auto;
+
+body,html,main,section{
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x:hidden ;
 }

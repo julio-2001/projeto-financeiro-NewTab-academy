@@ -9,6 +9,7 @@
     
 }
 
+
 .con-transação .con-transação_form{
     width: 100%;
     height:261.44px ;
@@ -98,4 +99,52 @@
     font-weight:400 ;
     font-size: 14px;
     text-align: center;
+}
+
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- tablet --------------------#  */
+
+@media (min-width:768px) {
+
+    .con-transação{
+        width: 94.8%;
+        height: 189px;
+        margin-top: 20px;
+    
+        
+
+    }
+
+    .con-transação .con-transação_form{
+        display: inline-block;
+        
+    }
+
+    .con-transação_form .con-transação_form_tipo {
+        width: 19.54%;
+        height: 32px;
+
+    }
+    .con-transação_form .mercadoria {
+        width: 45.32%;
+        height: 32px;
+
+    }
+
+
+    .con-transação_form .valor{
+        width: 19.54%;
+        height: 32px;
+    }
+        
+    
+    .con-transação_form .botao{
+        width: 26.1%;
+        height: 32px;
+    }
+
+
+    
 }
