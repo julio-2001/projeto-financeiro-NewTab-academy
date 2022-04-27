@@ -14,8 +14,9 @@
     width: 100%;
     height:261.44px ;
     
-    display: block;
+    /**/
 }
+
 
 .con-transação .con-transação_form label{
     font-family: 'lato';
@@ -25,6 +26,7 @@
     
 
 }
+
 
 
 /*tipo*/
@@ -41,10 +43,10 @@
 }
 
 
-
 .con-transação .con-transação_form .con-transação_form_tipo #escolha{
     color: #979797;
 }
+
 
 .con-transação .con-transação_form .con-transação_form_tipo option{
     color: black;
@@ -70,10 +72,14 @@
     
 }
 
+
+
+
 /*valor*/
 .con-transação .con-transação_form .valor{
     margin-top: 20.67px;
 }
+
 
 .con-transação .con-transação_form .valor #valor_mercadoria_input{
     margin-top: 4.43px;
@@ -85,10 +91,14 @@
     
 }
 
+
+
+
 /*botao*/
 .con-transação .con-transação_form .botao{
     margin-top: 19.78px;
 }
+
 
 .con-transação .con-transação_form .botao #botao_estilo{
     width: 100%;
@@ -99,6 +109,7 @@
     font-weight:400 ;
     font-size: 14px;
     text-align: center;
+    
 }
 
 
@@ -109,24 +120,78 @@
 @media (min-width:768px) {
 
     .con-transação{
-        width: 94.8%;
+        width: 728px;
         height: 189px;
         margin-top: 20px;
-    
-        
-
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 4px;
+      
     }
+
 
     .con-transação .con-transação_form{
-        display: inline-block;
+        border: 1px solid;
+        max-height: 189px;
+        justify-content: space-between;
+        display: inline-flex;
+        flex-flow: wrap;
+        padding: 32px;
         
     }
+
+
+    .con-transação .con-transação_form::after{
+        content: "Nova transação";
+        transform:translate(280px ,-125px) ;
+        font-size: 18px;
+        font-weight: 700;
+        width: 100%;
+        margin-left: calc(center);
+        align-items: center;
+       
+    }
+
+
+    .con-transação_form_tipo  #escolha   {
+        display: flex;
+        
+    }
+
+
+    .mercadoria  #nome_mercadoria-input    {
+        display: flex;
+       
+        
+ 
+    }
+
+
+    .valor #valor_mercadoria_input{
+        display: flex;
+       
+        
+    }
+
+
+    .botao #botao_estilo{
+
+        margin-top: 19px;
+           
+    }
+
 
     .con-transação_form .con-transação_form_tipo {
         width: 19.54%;
         height: 32px;
+        margin-left: 20px;
+        margin-top: 20px;        
+        position: relative; 
 
     }
+
+
     .con-transação_form .mercadoria {
         width: 45.32%;
         height: 32px;
@@ -137,14 +202,22 @@
     .con-transação_form .valor{
         width: 19.54%;
         height: 32px;
+        margin-right: 20px;
     }
-        
+    
     
     .con-transação_form .botao{
         width: 26.1%;
         height: 32px;
+        margin-top: 19.78px;
+        margin-left: 508px;
+        
+      
     }
 
-
     
+
 }
+/*******************************************/
+
+

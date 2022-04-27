@@ -3,10 +3,12 @@
     background: #e0e0e0;
     width: 100%;
     height: 60px;
+    
 
     
    
 }
+
 
 .header-cotr .menu .menu_logo{
     display: flex;
@@ -26,6 +28,7 @@
    
 }
 
+
 .header-cotr .menu .menu_logo h1{
     font-size: 20px;
     font-weight: 600;
@@ -37,6 +40,7 @@
 
 }
 
+
 .header-cotr .menu .menu_logo .menu_shape{
     display: block;
     align-items: center;
@@ -46,6 +50,7 @@
     color: white;  /**/
 }
 
+
 .header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_cima{
     width: 18px;
     height: 2px;
@@ -54,12 +59,14 @@
     
 }
 
+
 .header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_frontal{
     width: 18px;
     height: 2px;
     background:#000000; /**/
     margin-top: 3px;
 }
+
 
 .header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_baixo{
     width: 18px;
@@ -80,6 +87,9 @@
     
 }
 
+
+
+
 /*     NavBar      */
 
 a{
@@ -88,8 +98,6 @@ a{
     transition: 0.3s;
     
 }
-
-
 
 
 nav {
@@ -103,6 +111,7 @@ nav {
    
 
 }
+
 
 .menu_navbar_list{
     list-style: none;
@@ -119,12 +128,17 @@ nav {
 
 }
 
-@media (max-width:999px){
+#menu_logo_hamburguer{
+    max-height: 60px;
+}
+
+
+@media (max-width:1112px){
 
  
         html,body{
             position:relative;
-            *overflow-x:hidden
+            overflow-x:hidden
         }
 
 
@@ -154,9 +168,6 @@ nav {
     
    
 }
-
-
-
 
 
     .menu_navbar_list #menu_navbar_lista_item1{
@@ -222,13 +233,20 @@ nav {
 
 /*--------------------   Responsividade   -------------------- */
 
-/* #-------------------- tablet --------------------#  */
+/* #-------------------- tablet landscape --------------------#  */
 
 
 
-@media (min-width:768px) {
+@media (min-width:1112px){
 
- 
+    
+
+
+
+
+
+
+
 
 
 }
