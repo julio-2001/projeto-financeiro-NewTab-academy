@@ -9,8 +9,6 @@
 </head>
 <body>
 
-
-
 <!-------------------------------- Area do menu  ------------------------------------>
 
 <!---------------- Parte superior  ------------------->
@@ -25,18 +23,14 @@
 
                     <!--- Parte navbar do mobile nao terminado -->  
                   
-                <nav   id="hamburguer"      >
-                    <a href="/"></a> 
-
-
+                <nav   id="menu_logo_hamburguer">
+                   
                 <div class="menu_shape"   onclick="active">
-
-                    
+ 
                     <div id="menu_shape_item"  class="menu_shape_linha_cima"></div>
                     <div id="menu_shape_item"  class="menu_shape_linha_frontal"></div>
                     <div id="menu_shape_item"  class="menu_shape_linha_baixo"></div>
 
-                    
                 </div>
 
                <ul class="menu_navbar_list">
@@ -46,10 +40,7 @@
                     <li id="menu_navbar_lista_item2" ><a  href="#"></a>Limpar dados </li>
     
                 </ul>
-
-
                 </nav>
-
             </div>
         </div>
     </header>
@@ -66,7 +57,9 @@
             <div class="con-transação_form">
                 <div class="con-transação_form_tipo">
 
+                    
 
+                    
                     <!---------- Tipo transação------------->
                     <label id="for_tipo" for="tipo_transação">Tipo de transação</label><br>
                     <select id="escolha" name="tipo_transação">
@@ -87,7 +80,7 @@
 
                 <div class="valor">
 
-
+                    
                     <!----------- Valor da mercadoria ------------>
                     <label for="valor_mercadoria">Valor</label><br>
                     <input type="number" id="valor_mercadoria_input" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00" required>
@@ -152,9 +145,7 @@
                             <td id="item_nome"  style="width: 70%;"    >+ lorem inpum</td>
                             <td  id="item_valor" style="width: 60%;"    >R$ 9,99</td>
                         </tr>
-                        
                     </tbody>
-
                 </table>
 
 
@@ -173,36 +164,19 @@
                         <tr>
                             <th id="total_resumo_resultado" >[lucro]</th>
                         </tr>
-
-
                     </tfoot>
-
-
                 </table>
-
-
-
-
-
-
-
             </div>
-
-
-
         </section>
-
     </main>
 
-
-
-
-
+    <!----------- Linha do rodapé  ---------------->
 <footer>
-    <div class="linha-horizontal"></div>
+    <div id="linha-horizontal"></div>
 </footer>
     
 
+<!------------------ Script para navbar -------------------------->
 
 <script src="mobile-navbar.js"></script>
 <script src="teste-navbar-.js"></script>

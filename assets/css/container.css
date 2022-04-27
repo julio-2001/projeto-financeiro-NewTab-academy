@@ -1,11 +1,9 @@
 @charset "UTF 8";
-
+@import "responsividade.css";
 @import "menu.css";
 
 @import "principal.css";
 
 @import "extrato.css";
-
-@import "responsividade.css";
 
 @import "corpo-stylo.css";
