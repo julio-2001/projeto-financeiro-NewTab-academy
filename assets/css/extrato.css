@@ -162,5 +162,34 @@ width: 100%;
         margin-top: 23px;
     }
 
+    
+    footer{
+        margin-top: 443px;
+    }
 
 }
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- tablet landscape --------------------#  */
+
+@media (min-width:1110px){
+    
+    .con-extrato .extrato{
+        width: 652px;
+        height: 281px;
+        margin-right: 20px;
+        margin-top: 26px;
+        transform: translate(420px);
+        position: absolute;
+        
+    }
+
+    
+    footer{
+        margin-top: 463px;
+    }
+
+
+}
+/*******************************************//*******************************************/

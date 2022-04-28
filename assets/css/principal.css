@@ -221,3 +221,83 @@
 /*******************************************/
 
 
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- tablet landscape --------------------#  */
+
+
+@media (min-width:1110px){
+    main{
+        display:flex;
+        margin-right: auto;
+    
+    }
+
+    .con-transação{
+        width:400px;
+        height: 344px;
+        margin-top: 48px;
+        position: absolute;
+        margin-left: 20px;
+        
+        
+
+
+    }
+
+
+    .con-transação .con-transação_form{
+        
+        
+        display: block;
+        padding: 0;
+        height: 100%;
+        max-height: 344px;
+        
+    }
+
+    .con-transação .con-transação_form::after{
+        display: flex;
+       
+        content: "Nova Transação";
+        transform: translate(150px, -290px);
+
+    }
+
+
+    .con-transação .con-transação_form .con-transação_form_tipo{
+       
+        width: 90%;
+        margin-top:50px ;
+        
+    }
+
+
+    .con-transação .con-transação_form .mercadoria{
+
+        width: 90%;
+        margin-top:50px ;
+        margin-left: 20px;
+    }
+
+
+    .con-transação .con-transação_form .valor{
+        width: 90%;
+        margin-top:50px ;
+        margin-left: 20px;
+    }
+
+    .con-transação .con-transação_form .botao{
+        position: relative;
+        width: 90%;
+        margin: 0;
+        margin-top:30px ;
+        margin-left: 20px;
+       
+    }
+
+
+
+    
+}
+/*******************************************/
