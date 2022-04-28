@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-height: 60px;
+    
 }
 
 
@@ -90,7 +90,7 @@
 
 
 
-/*     NavBar      */
+/*     NavBar   tablet , landscape   */
 
 a{
     color: rgb(250, 250, 250);
@@ -133,7 +133,9 @@ nav {
 }
 
 
-@media (max-width:1112px){
+
+
+@media (max-width:1109px){
 
  
         html,body{
@@ -237,17 +239,106 @@ nav {
 
 
 
-@media (min-width:1112px){
+@media (min-width:1110px){
 
+    .header-cotr .menu .menu_logo{
+        justify-content: start;
+        
+    }
     
+    .header-cotr .menu .menu_logo{
+        height: 80px;
+        background: #e0e0e0;
+    }
+
+    #menu_navbar_list_x{
+        display: none;
+    }
 
 
+    .header-cotr .menu .menu_logo  .menu_shape {
+        display: none;
+    }
+
+    .header-cotr .menu .menu_logo h1{
+        width: 400px;
+        margin-left: 20px;
+    }
+
+    #menu_logo_hamburguer{
+        margin-left: auto;
+        color: black;
+        background: rgb(255, 255, 255);
+        margin-right: 20px;
+        width: 360px;
+        height: 40px;
+
+    }
+
+    #menu_logo_hamburguer::after{
+        content: "|";
+        transform: translate(-160px);
+    }
+
+    .header-cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item1{
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0;
+        cursor: pointer;
+       
+        
+
+        
+
+    }
 
 
-
+    .header-cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item2{
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        margin-right: 10px;
+        cursor: pointer;
+        
+    }
 
 
 
 
 }
+
+/*******************************************/
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- Desktop --------------------#  */
+
+
+@media (min-width:1499px){
+
+    .header-cotr .menu .menu_logo img{
+
+        width: 40px;
+        height: 36.84px;
+
+    }
+
+
+    .header-cotr .menu .menu_logo img {
+        margin-left: 220px;
+    }
+
+
+    #menu_logo_hamburguer{
+        margin-right: 200px;
+    }
+
+
+
+}
+
+/*******************************************/
 
