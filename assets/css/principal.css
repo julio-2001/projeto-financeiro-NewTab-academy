@@ -233,6 +233,7 @@
     
     }
 
+
     .con-transação{
         width:400px;
         height: 344px;
@@ -255,6 +256,7 @@
         max-height: 344px;
         
     }
+
 
     .con-transação .con-transação_form::after{
         display: flex;
@@ -287,6 +289,7 @@
         margin-left: 20px;
     }
 
+
     .con-transação .con-transação_form .botao{
         position: relative;
         width: 90%;
@@ -295,9 +298,30 @@
         margin-left: 20px;
        
     }
+}
+/*******************************************/
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- Desktop --------------------#  */
+
+@media (min-width:1499px){
+    main{
+        margin-left: 200px;
+       
+    }
+
+    .con-transação{
+        margin-top: 55px;
+    }
+
+    #botao_estilo{
+        cursor: pointer;
+        
+
+    }
 
 
 
-    
 }
 /*******************************************/
