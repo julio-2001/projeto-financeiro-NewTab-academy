@@ -12,50 +12,69 @@
 <!-------------------------------- Area do menu  ------------------------------------>
 
 <!---------------- Parte superior  ------------------->
-    <header class="header-cotr">
+
+    <header class="header_cotr"> 
         
         <div class="menu">
 
             <div class="menu_logo">
-                <img src="assets/imagem/logo (2).png">
+                <img src="assets/imagem/Ellipse 13(logo).png" alt="Logo">
                 <h1>Controle financeiro</h1>
+   
+                    <!--- Parte navbar do mobile e tablet -->  
+                
 
-
-                    <!--- Parte navbar do mobile nao terminado -->  
-                  
                 <nav   id="menu_logo_hamburguer">
                    
-                <div class="menu_shape"   onclick="active">
+                        <input type="checkbox" id="ativar">
+                        <label for="ativar" class="checkbtn" >
+                            <i class="fas_fabars"> 
+
+                                
+                                <div class="menu_shape"> 
  
-                    <div id="menu_shape_item"  class="menu_shape_linha_cima"></div>
-                    <div id="menu_shape_item"  class="menu_shape_linha_frontal"></div>
-                    <div id="menu_shape_item"  class="menu_shape_linha_baixo"></div>
+                                    <img src="assets/imagem/Shape.png" alt="Menu"  >
 
-                </div>
+                                </div>
 
-               <ul class="menu_navbar_list">
+                                
+                            </i>
+                        </label>
+
+                        <ul class="menu_navbar_list"  > 
                    
-                    <img id="menu_navbar_list_x" src="assets/imagem/sidebar-close-btn.svg" alt="fechar menu">
-                    <li id="menu_navbar_lista_item1" ><a href="#"></a>Cadastrar transações </li>
-                    <li id="menu_navbar_lista_item2" ><a  href="#"></a>Limpar dados </li>
-    
-                </ul>
+                            
+                            <label for="ativar" class="checkbtn">
+                                <i class="fasfabars_fecha">
+
+                                  <img id="menu_navbar_list_x" src="assets/imagem/sidebar-close-btn.svg" alt="fechar menu">
+  
+                                </i>
+
+                            </label>
+                            
+
+                            <li id="menu_navbar_lista_item1" ><a href="#"></a>Cadastrar transações </li> <!---Mudar nome-->
+                            <li id="menu_navbar_lista_item2" ><a  href="#"></a>Limpar dados </li> <!---Mudar nome-->
+                        </ul>    
                 </nav>
+
             </div>
+
         </div>
+
     </header>
 
  
-
 
 <!--------------------------------- Area principal    ------------------------------------>
 
 
 <!----------------- Parte frontal  ---------------------->
     <main>
-        <section class="con-transação">
-            <div class="con-transação_form">
-                <div class="con-transação_form_tipo">
+        <section class="con_transacao"> <!-- *acento* -->
+            <div class="con_transacao_form"> <!-- *acento* -->
+                <div class="con_transacao_form_tipo"> <!-- *acento* -->
 
                     
 
@@ -104,7 +123,7 @@
 
         <!----------------------------------- Area extrato    --------------------->
 
-        <section class="con-extrato">
+        <section class="con_extrato"> 
             <div class="extrato">
 
                 <table class="extrato_lista">
@@ -156,31 +175,30 @@
                     <tfoot class="total_resumo">
 
                         <tr class="total_resumo_valor">
-                            <th  id="total_resumo_item1">Total</th>
-                            <th  id="total_resumo_item2">12.909,99</th>
+                            <th  id="total_resumo_item_total">Total</th> 
+                            <th  id="total_resumo_item_dinheiro">12.909,99</th> 
                         </tr>
 
 
                         <tr>
-                            <th id="total_resumo_resultado" >[lucro]</th>
+                            <th id="total_resumo_resultado" >[  LUCRO  ]</th>
                         </tr>
+
                     </tfoot>
+
                 </table>
+
             </div>
+
         </section>
+
     </main>
 
     <!----------- Linha do rodapé  ---------------->
 <footer>
-    <div id="linha-horizontal"></div>
+    <div id="linha_horizontal"></div> 
 </footer>
     
-
-<!------------------ Script para navbar -------------------------->
-
-<script src="mobile-navbar.js"></script>
-<script src="teste-navbar-.js"></script>
-
 
 </body>
 </html> 

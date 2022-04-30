@@ -1,4 +1,4 @@
-.header-cotr .menu{
+.header_cotr .menu{   
 
     background: #e0e0e0;
     width: 100%;
@@ -10,7 +10,7 @@
 }
 
 
-.header-cotr .menu .menu_logo{
+.header_cotr .menu .menu_logo{  
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +18,7 @@
 }
 
 
-.header-cotr .menu .menu_logo img{
+.header_cotr .menu .menu_logo img{  
     width: 30px;
     height: 27.63px;
     margin-left: 22px;
@@ -29,7 +29,7 @@
 }
 
 
-.header-cotr .menu .menu_logo h1{
+.header_cotr .menu .menu_logo h1{  
     font-size: 20px;
     font-weight: 600;
     font-style: normal;
@@ -40,45 +40,27 @@
 
 }
 
+/*********************************************/
+                /*Reformulação*/
 
-.header-cotr .menu .menu_logo .menu_shape{
-    display: block;
-    align-items: center;
-    margin-top: 5px;
+
+
+.header_cotr .menu .menu_logo .menu_shape img{  
+   
     margin-right: 21px;
     cursor: pointer;
-    color: white;  /**/
+    max-width: 18px;
+    max-height: 12px;
 }
 
-
-.header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_cima{
-    width: 18px;
-    height: 2px;
-    background: #000000; /**/
-    
-    
-}
+                /*Reformulação*/
+/*********************************************/
 
 
-.header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_frontal{
-    width: 18px;
-    height: 2px;
-    background:#000000; /**/
-    margin-top: 3px;
-}
 
 
-.header-cotr .menu .menu_logo .menu_shape .menu_shape_linha_baixo{
-    width: 18px;
-    height: 2px;
-    background: #000000; /**/
-    margin-top: 3px;
-
-}
-
-
-.header-cotr .menu .menu_logo_shape a {
-    text-decoration: none;
+.header_cotr .menu .menu_logo_shape a {  
+    /*text-decoration: none;*/
     
     padding: 15px 0;
     color:#333333;
@@ -90,7 +72,21 @@
 
 
 
+<<<<<<< HEAD
 /*     NavBar   tablet , landscape   */
+=======
+/*********************************************************************************************************/
+                                /*********   Reformulação navbar  *************/
+
+
+
+                                
+
+/*     NavBar   tablet , landscape   */
+
+
+
+>>>>>>> reformulação
 
 a{
     color: rgb(250, 250, 250);
@@ -107,6 +103,7 @@ nav {
    font-family: 'lato', sans-serif;
     background: #e0e0e0;
     height: 8vh;
+    
 
    
 
@@ -123,7 +120,7 @@ nav {
 
 
 .menu_navbar_list li{
-    letter-spacing: 3px;
+   
     margin-left: 32px;
 
 }
@@ -135,6 +132,27 @@ nav {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+/**********************************************************************************/
+
+
+
+
+
+
+
+
+
+
+>>>>>>> reformulação
 @media (max-width:1109px){
 
  
@@ -144,20 +162,46 @@ nav {
         }
 
 
+
+
     .menu_navbar_list {   /**/
        position: absolute;
-        top: 8vh;
+        top: 0;
         right: 0;
         width: 85.41vw;
        height: 100%;
         background: black;
         flex-direction: column;
         align-items: flex-end;
-        display: flex;
-        margin-top: -60px;  /**/
-       display: none;/**/        
+        display: none;
+        margin-top: -5px;  /**/
+        
+        
 
     }
+
+  
+    #ativar{
+        display: none;
+    }
+
+    #ativar:checked ~ .menu_navbar_list{
+        display: flex;
+        
+
+    }
+  
+    #desativar:checked ~ #ativar{
+        display: none;
+        
+    }
+
+/**/
+
+
+.checkbtn{
+    width: 100%;
+}
 
 
 
@@ -165,10 +209,11 @@ nav {
 #menu_navbar_list_x{
     width: 16px;
     height: 16px; 
-    margin-right: 90%;
-    margin-top: 30px;
+    margin-top: 27px;
+
     
-   
+    
+
 }
 
 
@@ -226,11 +271,32 @@ nav {
 
 
 
-    .con-extrato .extrato{
+    .con_extrato .extrato{ /**//**//**//**//**/
         mix-blend-mode: overlay;
     }
 
 }
+
+                             /*********   Reformulação navbar  *************/
+/*********************************************************************************************************/
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- tablet --------------------#  */
+
+
+@media(min-width:768px){
+
+    .menu_navbar_list {
+        width: 32.9vw;
+    }
+
+}
+
+
+
+
+
 
 
 /*--------------------   Responsividade   -------------------- */
@@ -241,12 +307,23 @@ nav {
 
 @media (min-width:1110px){
 
-    .header-cotr .menu .menu_logo{
+    /*********************/
+            /*Navbar*/
+
+             
+
+    /**********************/
+
+
+
+
+
+    .header_cotr .menu .menu_logo{  
         justify-content: start;
         
     }
     
-    .header-cotr .menu .menu_logo{
+    .header_cotr .menu .menu_logo{  
         height: 80px;
         background: #e0e0e0;
     }
@@ -255,12 +332,16 @@ nav {
         display: none;
     }
 
-
-    .header-cotr .menu .menu_logo  .menu_shape {
+    #ativar{
         display: none;
     }
 
-    .header-cotr .menu .menu_logo h1{
+
+    .header_cotr .menu .menu_logo  .menu_shape {  
+        display: none;
+    }
+
+    .header_cotr .menu .menu_logo h1{  
         width: 400px;
         margin-left: 20px;
     }
@@ -280,7 +361,7 @@ nav {
         transform: translate(-160px);
     }
 
-    .header-cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item1{
+    .header_cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item1{ 
         color: black;
         font-weight: 600;
         font-size: 16px;
@@ -295,7 +376,7 @@ nav {
     }
 
 
-    .header-cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item2{
+    .header_cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item2{  
         color: black;
         font-weight: 600;
         font-size: 16px;
@@ -319,7 +400,11 @@ nav {
 
 @media (min-width:1499px){
 
+<<<<<<< HEAD
     .header-cotr .menu .menu_logo img{
+=======
+    .header_cotr .menu .menu_logo img{  
+>>>>>>> reformulação
 
         width: 40px;
         height: 36.84px;
@@ -327,7 +412,11 @@ nav {
     }
 
 
+<<<<<<< HEAD
     .header-cotr .menu .menu_logo img {
+=======
+    .header_cotr .menu .menu_logo img {  
+>>>>>>> reformulação
         margin-left: 220px;
     }
 
