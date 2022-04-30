@@ -1,4 +1,4 @@
-.con-transação{  /* Mudança de nome */
+.con_transação{  /*acento*/ 
     width: 90.27%;
     height: 298px;
     background:white;
@@ -10,7 +10,7 @@
 }
 
 
-.con-transação .con-transação_form{  /* Mudança de nome */
+.con_transação .con_transação_form{   /*acento*/ 
     width: 100%;
     height:261.44px ;
     
@@ -18,7 +18,7 @@
 }
 
 
-.con-transação .con-transação_form label{  /* Mudança de nome */
+.con_transação .con_transação_form label{   /*acento*/ 
     font-family: 'lato';
     font-size: 14px;
     font-weight: 400;
@@ -31,7 +31,7 @@
 
 /*tipo*/
 
- .con-transação .con-transação_form .con-transação_form_tipo select {  /* Mudança de nome */
+ .con_transação .con_transação_form .con_transação_form_tipo select {  /*acento*/ 
     margin-top: 4.78px;
     width: 100%;
     height: 32px;
@@ -43,12 +43,12 @@
 }
 
 
-.con-transação .con-transação_form .con-transação_form_tipo #escolha{  /* Mudança de nome */
+.con_transação .con_transação_form .con_transação_form_tipo #escolha{   /*acento*/ 
     color: #979797;
 }
 
 
-.con-transação .con-transação_form .con-transação_form_tipo option{  /* Mudança de nome */
+.con_transação .con_transação_form .con_transação_form_tipo option{   /*acento*/ 
     color: black;
     
     
@@ -57,12 +57,12 @@
 
 
 /*nome*/
-.con-transação .con-transação_form .mercadoria{  /* Mudança de nome */
+.con_transação .con_transação_form .mercadoria{  /*acento*/ 
     margin-top: 20px;
 }
 
 
-.con-transação .con-transação_form .mercadoria #nome_mercadoria-input{  /* Mudança de nome */
+.con_transação .con_transação_form .mercadoria #nome_mercadoria-input{   /*acento*/ 
     margin-top: 4.78px;
     width: 100%;
     height: 32px;
@@ -76,12 +76,12 @@
 
 
 /*valor*/
-.con-transação .con-transação_form .valor{  /* Mudança de nome */
+.con_transação .con_transação_form .valor{   /*acento*/ 
     margin-top: 20.67px;
 }
 
 
-.con-transação .con-transação_form .valor #valor_mercadoria_input{  /* Mudança de nome */
+.con_transação .con_transação_form .valor #valor_mercadoria_input{   /*acento*/ 
     margin-top: 4.43px;
     width: 100%;
     height: 32px;
@@ -95,12 +95,12 @@
 
 
 /*botao*/
-.con-transação .con-transação_form .botao{  /* Mudança de nome */
+.con_transação .con_transação_form .botao{   /*acento*/ 
     margin-top: 19.78px;
 }
 
 
-.con-transação .con-transação_form .botao #botao_estilo{  /* Mudança de nome */
+.con_transação .con_transação_form .botao #botao_estilo{   /*acento*/ 
     width: 100%;
     height: 32px;
     border-radius: 8px;
@@ -119,11 +119,10 @@
 
 @media (min-width:768px) {
  
-    .con-transação{ /* Mudança de nome */
-        width: 728px;
+    .con_transação{  /*acento*/ 
+        width: 94,8;
         height: 189px;
         margin-top: 20px;
-        position: relative;
         margin-left: auto;
         margin-right: auto;
         border-radius: 4px;
@@ -131,7 +130,7 @@
     }
 
 
-    .con-transação .con-transação_form{  /* Mudança de nome */
+    .con_transação .con_transação_form{   /*acento*/ 
         border: 1px solid;
         max-height: 189px;
         justify-content: space-between;
@@ -142,19 +141,20 @@
     }
 
 
-    .con-transação .con-transação_form::after{  /* Mudança de nome */
+    .con_transação .con_transação_form::after{   /*acento*/ 
         content: "Nova transação";
         transform:translate(280px ,-125px) ;
         font-size: 18px;
         font-weight: 700;
         width: 100%;
-        margin-left: calc(center);
-        align-items: center;
+        
+       
+       
        
     }
 
 
-    .con-transação_form_tipo  #escolha   {  /* Mudança de nome */
+    .con_transação_form_tipo  #escolha   {   /*acento*/ 
         display: flex;
         
     }
@@ -168,7 +168,7 @@
     }
 
 
-    .valor #valor_mercadoria_input{
+    .valor #valor_mercadoria_input{ 
         display: flex;
        
         
@@ -182,7 +182,7 @@
     }
 
 
-    .con-transação_form .con-transação_form_tipo {  /* Mudança de nome */
+    .con_transação_form .con_transação_form_tipo {   /*acento*/ 
         width: 19.54%;
         height: 32px;
         margin-left: 20px;
@@ -192,25 +192,26 @@
     }
 
 
-    .con-transação_form .mercadoria {  /* Mudança de nome */
+    .con_transação_form .mercadoria {  /*acento*/ 
         width: 45.32%;
         height: 32px;
 
     }
 
 
-    .con-transação_form .valor{  /* Mudança de nome */
+    .con_transação_form .valor{  /*acento*/ 
         width: 19.54%;
         height: 32px;
         margin-right: 20px;
     }
     
     
-    .con-transação_form .botao{ /* Mudança de nome */
+    .con_transação_form .botao{  /*acento*/ 
         width: 26.1%;
         height: 32px;
         margin-top: 19.78px;
         margin-left: 508px;
+        padding: 6px;
         
       
     }
@@ -229,12 +230,12 @@
 @media (min-width:1110px){
     main{
         display:flex;
-        margin-right: auto;
+        
     
     }
 
 
-    .con-transação{  /* Mudança de nome */
+    .con_transação{   /*acento*/ 
         width:400px;
         height: 344px;
         margin-top: 48px;
@@ -247,7 +248,7 @@
     }
 
 
-    .con-transação .con-transação_form{  /* Mudança de nome */
+    .con_transação .con_transação_form{   /*acento*/ 
         
         
         display: block;
@@ -258,7 +259,7 @@
     }
 
 
-    .con-transação .con-transação_form::after{  /* Mudança de nome */
+    .con_transação .con_transação_form::after{  /*acento*/ 
         display: flex;
        
         content: "Nova Transação";
@@ -267,7 +268,7 @@
     }
 
 
-    .con-transação .con-transação_form .con-transação_form_tipo{  /* Mudança de nome */
+    .con_transação .con_transação_form .con_transação_form_tipo{  /*acento*/ 
        
         width: 90%;
         margin-top:50px ;
@@ -275,7 +276,7 @@
     }
 
 
-    .con-transação .con-transação_form .mercadoria{ /* Mudança de nome */
+    .con_transação .con_transação_form .mercadoria{ /*acento*/ 
 
         width: 90%;
         margin-top:50px ;
@@ -283,14 +284,14 @@
     }
 
 
-    .con-transação .con-transação_form .valor{  /* Mudança de nome */
+    .con_transação .con_transação_form .valor{  /*acento*/ 
         width: 90%;
         margin-top:50px ;
         margin-left: 20px;
     }
 
 
-    .con-transação .con-transação_form .botao{  /* Mudança de nome */
+    .con_transação .con_transação_form .botao{  /*acento*/ 
         position: relative;
         width: 90%;
         margin: 0;
@@ -311,7 +312,7 @@
        
     }
 
-    .con-transação{  /* Mudança de nome */
+    .con_transação{  /*acento*/ 
         margin-top: 55px;
     }
 
