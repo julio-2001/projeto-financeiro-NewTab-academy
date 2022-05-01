@@ -1,0 +1,417 @@
+.header_cotr .menu{   
+
+    background: #e0e0e0;
+    width: 100%;
+    height: 60px;
+    
+
+    
+   
+}
+
+
+.header_cotr .menu .menu_logo{  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+.header_cotr .menu .menu_logo img{  
+    width: 30px;
+    height: 27.63px;
+    margin-left: 22px;
+    margin-top: 5px;
+    display: flex;
+    
+   
+}
+
+
+.header_cotr .menu .menu_logo h1{  
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-top: 5px;
+    line-height: 24px;
+
+}
+
+/*********************************************/
+                /*Reformulação*/
+
+
+
+.header_cotr .menu .menu_logo .menu_shape img{  
+   
+    margin-right: 21px;
+    cursor: pointer;
+    max-width: 18px;
+    max-height: 12px;
+}
+
+                /*Reformulação*/
+/*********************************************/
+
+
+
+
+.header_cotr .menu .menu_logo_shape a {  
+    /*text-decoration: none;*/
+    
+    padding: 15px 0;
+    color:#333333;
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
+
+
+
+/*********************************************************************************************************/
+                                /*********   Reformulação navbar  *************/
+
+
+
+                                
+
+/*     NavBar   tablet , landscape   */
+
+
+
+
+a{
+    color: rgb(250, 250, 250);
+    text-decoration: none;
+    transition: 0.3s;
+    
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   font-family: 'lato', sans-serif;
+    background: #e0e0e0;
+    height: 8vh;
+    
+
+   
+
+}
+
+
+.menu_navbar_list{
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+    color: white;
+
+}
+
+
+.menu_navbar_list li{
+   
+    margin-left: 32px;
+
+}
+
+#menu_logo_hamburguer{
+    max-height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************************/
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1109px){
+
+ 
+        html,body{
+            position:relative;
+            overflow-x:hidden
+        }
+
+
+
+
+    .menu_navbar_list {   /**/
+       position: absolute;
+        top: 0;
+        right: 0;
+        width: 85.41vw;
+       height: 100%;
+        background: black;
+        flex-direction: column;
+        align-items: flex-end;
+        display: none;
+        margin-top: -5px;  /**/
+        
+        
+
+    }
+
+  
+    #ativar{
+        display: none;
+    }
+
+    #ativar:checked ~ .menu_navbar_list{
+        display: flex;
+        
+
+    }
+  
+    #desativar:checked ~ #ativar{
+        display: none;
+        
+    }
+
+/**/
+
+
+.checkbtn{
+    width: 100%;
+}
+
+
+
+
+#menu_navbar_list_x{
+    width: 16px;
+    height: 16px; 
+    margin-top: 27px;
+
+    
+    
+
+}
+
+
+    .menu_navbar_list #menu_navbar_lista_item1{
+        margin-top: 62px;
+         cursor: pointer;
+         padding: 5px;
+         width: 100%;
+         display: flex;
+         justify-content: flex-end;
+
+    }
+    .menu_navbar_list #menu_navbar_lista_item2{
+        margin-top: 15px;
+        cursor: pointer;
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu_navbar_list #menu_navbar_lista_item1:hover{
+        background:#c4c4c4 ;
+        color: #333333;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 16px;
+        font-weight: 600;
+       
+    }
+
+
+
+    .menu_navbar_list #menu_navbar_lista_item2:hover{
+        background: #c4c4c4;
+        color: #333333;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 16px;
+        font-weight: 600;
+        
+
+    }
+
+    .menu_navbar_list li{
+
+        margin-left: 0;
+        
+    }
+
+
+
+
+
+    .con_extrato .extrato{ /**//**//**//**//**/
+        mix-blend-mode: overlay;
+    }
+
+}
+
+                             /*********   Reformulação navbar  *************/
+/*********************************************************************************************************/
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- tablet --------------------#  */
+
+
+@media(min-width:768px){
+
+    .menu_navbar_list {
+        width: 32.9vw;
+    }
+
+}
+
+
+
+
+
+
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- tablet landscape --------------------#  */
+
+
+
+@media (min-width:1110px){
+
+    /*********************/
+            /*Navbar*/
+
+             
+
+    /**********************/
+
+
+
+
+
+    .header_cotr .menu .menu_logo{  
+        justify-content: start;
+        
+    }
+    
+    .header_cotr .menu .menu_logo{  
+        height: 80px;
+        background: #e0e0e0;
+    }
+
+    #menu_navbar_list_x{
+        display: none;
+    }
+
+    #ativar{
+        display: none;
+    }
+
+
+    .header_cotr .menu .menu_logo  .menu_shape {  
+        display: none;
+    }
+
+    .header_cotr .menu .menu_logo h1{  
+        width: 400px;
+        margin-left: 20px;
+    }
+
+    #menu_logo_hamburguer{
+        margin-left: auto;
+        color: black;
+        background: rgb(255, 255, 255);
+        margin-right: 20px;
+        width: 360px;
+        height: 40px;
+
+    }
+
+    #menu_logo_hamburguer::after{
+        content: "|";
+        transform: translate(-160px);
+    }
+
+    .header_cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item1{ 
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0;
+        cursor: pointer;
+       
+        
+
+        
+
+    }
+
+
+    .header_cotr .menu .menu_logo .menu_navbar_list #menu_navbar_lista_item2{  
+        color: black;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        margin-right: 10px;
+        cursor: pointer;
+        
+    }
+
+
+
+
+}
+
+/*******************************************/
+
+/*--------------------   Responsividade   -------------------- */
+
+/* #-------------------- Desktop --------------------#  */
+
+
+@media (min-width:1499px){
+
+    .header_cotr .menu .menu_logo img{  
+
+        width: 40px;
+        height: 36.84px;
+
+    }
+
+
+    .header_cotr .menu .menu_logo img {  
+        margin-left: 220px;
+    }
+
+
+    #menu_logo_hamburguer{
+        margin-right: 200px;
+    }
+
+
+
+}
+
+/*******************************************/
