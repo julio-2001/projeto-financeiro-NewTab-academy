@@ -97,18 +97,23 @@
 /*botao*/
 .con_transacao .con_transacao_form .botao{    
     margin-top: 19.78px;
+ 
+    
 }
 
 
 .con_transacao .con_transacao_form .botao #botao_estilo{  
-    width: 100%;
+   width: 100%;
     height: 32px;
     border-radius: 8px;
     background: #333333;
     color: white;
     font-weight:400 ;
     font-size: 14px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+
     
 }
 
@@ -143,15 +148,16 @@
 
     .con_transacao .con_transacao_form::after{   
         content: "Nova transação";
-        transform:translate(280px ,-125px) ;
         font-size: 18px;
         font-weight: 700;
         width: 100%;
-        
-       
-       
+        display: flex;
+        justify-content: center;
+        transform: translateY(-120px);
        
     }
+
+
 
 
     .con_transacao_form_tipo  #escolha   {  
@@ -263,7 +269,7 @@
         display: flex;
        
         content: "Nova Transação";
-        transform: translate(150px, -290px);
+       transform: translateY(-290px);
 
     }
 
