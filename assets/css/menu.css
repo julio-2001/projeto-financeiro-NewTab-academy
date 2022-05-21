@@ -184,7 +184,7 @@ nav {
 
     }
   
-    #desativar:checked ~ #ativar{
+    #desativar:checked  #ativar{
         display: none;
         
     }
@@ -228,7 +228,7 @@ nav {
         justify-content: flex-end;
     }
 
-    .menu_navbar_list #menu_navbar_lista_item1:hover{
+    .menu_navbar_list #menu_navbar_lista_item1{
         background:#c4c4c4 ;
         color: #333333;
         width: 100%;

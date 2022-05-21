@@ -72,28 +72,35 @@
 
 <!----------------- Parte frontal  ---------------------->
     <main>
-        <section class="con_transacao"> <!-- *acento* -->
-            <div class="con_transacao_form"> <!-- *acento* -->
-                <div class="con_transacao_form_tipo"> <!-- *acento* -->
+        <section class="con_transacao"> 
+            <div class="con_transacao_form"> 
+                <div class="con_transacao_form_tipo">
 
                     
 
-                    
+                    <form action="post" >
                     <!---------- Tipo transação------------->
                     <label id="for_tipo" for="tipo_transação">Tipo de transação</label><br>
-                    <select id="escolha" name="tipo_transação">
-                        <option value="compra">Compra</option>
-                        <option value="venda">Venda</option>
+                    <select id="escolha" name="tipo_transação"  >
+                    
+                        <optgroup label="Selecione"> 
+
+                            <option value="compra">Compra</option>
+                            <option value="venda">Venda</option>
+                        </optgroup>
+
+
                     </select>
                 </div>
+
 
 
                 <div class="mercadoria">
 
 
                     <!----------- Nome da mercadoria   ----------->
-                    <label id="for_nome" for="nome_mercadoria">Nome da mercadoria</label><br>
-                    <input type="text" id="nome_mercadoria-input"  name="nome_mercadoria" placeholder="input" autocomplete="off" required>
+                    <label id="for_nome"  for="nome_mercadoria">Nome da mercadoria</label><br>
+                    <input type="text" id="nome_mercadoria-input"  onblur="TestaCampoMercadoria(event)" required  onfocus="this.value =''"  name="nome_mercadoria" placeholder="input" autocomplete="off" >
                 </div>
 
 
@@ -102,17 +109,17 @@
                     
                     <!----------- Valor da mercadoria ------------>
                     <label for="valor_mercadoria">Valor</label><br>
-                    <input type="number" id="valor_mercadoria_input" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00" required>
+                    <input type="number" id="valor_mercadoria_input" onkeypress="TestaCampoValorNumeros(event)" onblur="TestaCampoValor(event)" onfocus="this.value =''" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00" required>
                 </div>
-
 
 
 
                 <!------------ Botão ----------------->
                 <div class="botao">
-                    <input id="botao_estilo" type="button" value="Adicionar transação">
+                    <button id="botao_estilo" type="submit"  onclick="TestaEnvio(event)" > Adicionar transação </button>
                 </div>
-            </div>
+            </div> 
+        </form>
 
 
 
@@ -143,6 +150,7 @@
 
 
                  <!-------- Parte de frontal do extrato  "lista" ------------->
+                 
                 <table  class="resumo">
                     <tbody class="resumo_extrato">
                         
@@ -199,6 +207,10 @@
     <div id="linha_horizontal"></div> 
 </footer>
     
+
+    <script src="assets/javascript/section1.js"></script>
+    <script src="assets/javascript/section2.js"></script>
+
 
 </body>
 </html> 
