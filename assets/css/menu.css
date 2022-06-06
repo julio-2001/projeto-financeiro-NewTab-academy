@@ -100,6 +100,7 @@ nav {
     background: #e0e0e0;
     height: 8vh;
     
+    
 
    
 
@@ -123,6 +124,8 @@ nav {
 
 #menu_logo_hamburguer{
     max-height: 60px;
+    
+    
 }
 
 
@@ -176,16 +179,20 @@ nav {
   
     #ativar{
         display: none;
+        
     }
 
     #ativar:checked ~ .menu_navbar_list{
         display: flex;
+       
+      
         
 
     }
   
     #desativar:checked  #ativar{
         display: none;
+        
         
     }
 
@@ -194,6 +201,7 @@ nav {
 
 .checkbtn{
     width: 100%;
+    
 }
 
 
@@ -203,6 +211,7 @@ nav {
     width: 16px;
     height: 16px; 
     margin-top: 27px;
+    
 
     
     

@@ -1,0 +1,288 @@
+<table  class="resumo">
+<tbody class="resumo_extrato">
+    
+
+        
+    <tr  class="resumo_extrato_item">  
+        <td  id="item_nome"  style="width: 80%;" >+ Lorem ipsum dolor sit amet consectetur</td>
+        <td  id="item_valor" style="width: 60%;"   >R$ 12.999,99</td>
+    </tr>
+
+
+    <tr  class="resumo_extrato_item">
+        <td id="item_nome"  style="width: 70%;"    >- Quis nostrud exercitation</td>
+        <td  id="item_valor" style="width: 60%;"    >R$ 99,99</td>
+    </tr>
+
+      
+    <tr class="resumo_extrato_item">
+        <td id="item_nome"  style="width: 70%;"    >+ lorem inpum</td>
+        <td  id="item_valor" style="width: 60%;"    >R$ 9,99</td>
+    </tr>
+
+</tbody>
+</table>
+
+
+
+
+/*
+<table  class="resumo">
+<tbody class="resumo_extrato">
+    
+
+        
+    <tr  class="resumo_extrato_item">  
+        <td  id="item_nome"  style="width: 80%;" >+ Lorem ipsum dolor sit amet consectetur</td>
+        <td  id="item_valor" style="width: 60%;"   >R$ 12.999,99</td>
+    </tr>
+
+
+    <tr  class="resumo_extrato_item">
+        <td id="item_nome"  style="width: 70%;"    >- Quis nostrud exercitation</td>
+        <td  id="item_valor" style="width: 60%;"    >R$ 99,99</td>
+    </tr>
+
+      
+    <tr class="resumo_extrato_item">
+        <td id="item_nome"  style="width: 70%;"    >+ lorem inpum</td>
+        <td  id="item_valor" style="width: 60%;"    >R$ 9,99</td>
+    </tr>
+</tbody>
+</table>*/
+
+
+   
+const padraoNumeros = /[^0-9]/;
+
+function mascaraDinheiro(e) {
+  if (padraoNumeros.test(e.key)) {
+    console.log(e.key);
+    e.preventDefault();
+    return;
+  }
+
+  if (!e.target.value) return;
+
+  valor = e.target.value.toString();
+  valor = valor.replace(/[\D]+/g, "");
+  valor = valor.replace(/([0-9]{1})$/g, ",$1");
+
+  if (valor.length >= 6) {
+    while (/([0-9]{4})[,|\.]/g.test(valor)) {
+      valor = valor.replace(/([0-9]{1})$/g, ",$1");
+      valor = valor.replace(/([0-9]{3})[,|\.]/g, ".$1");
+    }
+  }
+  e.target.value = valor;
+}
+
+
+
+
+
+/* GLOBAIS */
+//localStorage
+var listaExtrato = [];
+
+if (localStorage.getItem("lista") !== null) {
+  var listaStorage = localStorage.getItem("lista");
+  console.log("listaStorage", listaStorage);
+
+  var listaObjeto = JSON.parse(listaStorage); //transforma as strings em objeto novamente
+  console.log("listaStorage", listaObjeto);
+
+  listaExtrato = JSON.parse(listaStorage);
+}
+
+//transforma todo numero no formato da moeda real
+var formatter = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+  maximumFractionDigits: 2,
+});
+formatter.format(2500);
+
+/* FUNÇÕES */
+
+//formata o valor para Real "R$"
+function formatterCurrency(value) {
+  const valueFormat = value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+  return valueFormat;
+}
+
+//funções que fazer o menu-hamburguer funcionar
+function abrirMenu() {
+  document.getElementsByClassName("menu")[0].classList.add("abrirMenu");
+}
+function fecharMenu() {
+  document.getElementsByClassName("menu")[0].classList.remove("abrirMenu");
+}
+
+//função para limpar os dados quando clica no botão limpar dados
+function limparDados() {
+  let userConfirma = confirm("Deseja remover todas as transações?");
+
+  if (userConfirma) {
+    document.querySelectorAll(".conteudo").forEach((element) => {
+      element.remove();
+    });
+
+    localStorage.clear();
+    listaExtrato = [];
+    desenhaTabela();
+  }
+}
+
+//função que desenha toda a tabela de acordo com as funções criadas
+function desenhaTabela() {
+  var total = 0;
+
+  document.querySelectorAll(".conteudo").forEach((element) => {
+    element.remove();
+  });
+
+  if (listaExtrato.length === 0) {
+    document.getElementById("todasTransacoes").style.display = "grid";
+    console.log(listaExtrato.length === 0);
+    `
+    <tr>
+      <td class="nenhumaTransacao font-p" >Nenhuma transação cadastrada.</td>
+    </tr>
+    `;
+    document.querySelector(".lucroTotal").style.display = "none";
+  } else {
+    document.getElementById("todasTransacoes").style.display = "none";
+    console.log(listaExtrato);
+
+    document.querySelector(".lucroTotal").style.display = "grid";
+  }
+  let valorMascara;
+
+  for (produto in listaExtrato) {
+    if (listaExtrato[produto].tipoTransacao == "compra") {
+      // total -= parseFloat(listaExtrato[produto].valorMercadoria);
+      valorMascara = listaExtrato[produto];
+      total -= Number(listaExtrato[produto].valorMercadoria);
+    } else {
+      // total += parseFloat(listaExtrato[produto].valorMercadoria);
+      total += Number(listaExtrato[produto].valorMercadoria);
+    }
+
+    //adiciona as transações
+    document.querySelector("table.lista tbody").innerHTML += `
+  
+    <tr class="grid-bg extratos conteudo font-mercadorias" id="todasTransacoes"> 
+     <td class="campoTransacao">${
+       listaExtrato[produto].tipoTransacao == "compra" ? "-" : "+"
+     }</td>
+        <td class="campoMercadoria">
+          ${listaExtrato[produto].nomeMercadoria}
+        </td>
+        <td></td>
+        
+          <td class="valor-calculado">
+          ${formatterCurrency(Number(listaExtrato[produto].valorMercadoria))}
+          </td>
+          <td></td>
+      </tr>
+ 
+`;
+  }
+
+  //total
+  if (listaExtrato.length > 0) {
+    document.querySelector("table.lista tfoot").innerHTML = `
+    <tr></tr>
+    <tr>
+      <td class="font-total">Total</td>
+    </tr>
+    
+    <tr></tr>
+    <tr class="d-grid totalValor font-total-valor">
+    <td id="totalValor">
+    ${formatter.format(total)}
+    </td>
+    <td class="lucroPrejuizo font-lucro" onkeypress="somaTotal()" id="lucroTotal">
+    ${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}
+    </td>
+    
+    </tr>
+    `;
+
+    //soma todos os valores e da o valor total
+    document.getElementById("totalValor").innerHTML = formatter.format(total);
+
+    //mostra o lucro se for negativo será prejuízo se for positivo será lucro
+    document.getElementById("lucroTotal").innerHTML = `
+      <tr id="idTotal">
+        ${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}
+      </tr>
+      `;
+  }
+}
+
+//validação do formulário
+//foi validado todos os campos com sucesso!!
+function validacao(e) {
+  e.preventDefault();
+
+  var nomeMercadoria = document.getElementById("nome").value;
+  var valorMercadoria = document.getElementById("valor").value;
+  var tipoTransacao = document.getElementById("selecione").value;
+
+  if (nomeMercadoria == "") {
+    alert("Preencha o nome da mercadoria!");
+    return false;
+  }
+  if (valorMercadoria == "") {
+    alert("Preencha o valor da mercadoria!");
+    return false;
+  }
+
+  if (tipoTransacao == "selecione") {
+    alert("Preencha o tipo de transação!");
+    return false;
+  }
+
+  listaExtrato.push({
+    tipoTransacao: e.target.elements["selecione"].value,
+    nomeMercadoria: e.target.elements["name"].value,
+    valorMercadoria: e.target.elements["valor"].value
+      .replaceAll(".", "")
+      .replaceAll(",", "."),
+  });
+
+  //transforma os objetos em string para que possam ser mostrados na tabela
+  var listaString = JSON.stringify(listaExtrato);
+
+  //localStorage
+  localStorage.setItem("lista", listaString);
+
+  desenhaTabela();
+}
+
+desenhaTabela();
+
+
+
+
+
+
+/*
+
+<tr class="total_resumo_valor">
+                            <th  id="total_resumo_item_total"> Total </th> 
+                            <th  id="total_resumo_item_dinheiro"> 12.909,99 </th> 
+                            
+                        </tr>
+
+
+                        <tr>
+                            <th id="total_resumo_resultado" >[  LUCRO  ]</th>
+                        </tr>
+
+                        */

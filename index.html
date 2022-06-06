@@ -18,7 +18,7 @@
         <div class="menu">
 
             <div class="menu_logo">
-                <img src="assets/imagem/Ellipse 13(logo).png" alt="Logo">
+                <img src="assets/img/Ellipse 13(logo).png" alt="Logo">
                 <h1>Controle financeiro</h1>
    
                     <!--- Parte navbar do mobile e tablet -->  
@@ -33,7 +33,7 @@
                                 
                                 <div class="menu_shape"> 
  
-                                    <img src="assets/imagem/Shape.png" alt="Menu"  >
+                                    <img src="assets/img/Shape.png" alt="Menu"  >
 
                                 </div>
 
@@ -47,15 +47,15 @@
                             <label for="ativar" class="checkbtn">
                                 <i class="fasfabars_fecha">
 
-                                  <img id="menu_navbar_list_x" src="assets/imagem/sidebar-close-btn.svg" alt="fechar menu">
+                                  <img id="menu_navbar_list_x" src="assets/img/sidebar-close-btn.svg" alt="fechar menu">
   
                                 </i>
 
                             </label>
                             
 
-                            <li id="menu_navbar_lista_item1" ><a href="#"></a>Cadastrar transações </li> <!---Mudar nome-->
-                            <li id="menu_navbar_lista_item2" ><a  href="#"></a>Limpar dados </li> <!---Mudar nome-->
+                            <li id="menu_navbar_lista_item1" ><a href="#"></a>Cadastrar transações </li> 
+                            <li id="menu_navbar_lista_item2" onclick="ResetDados(event)" ><a href="#"  ></a  >Limpar dados </li> 
                         </ul>    
                 </nav>
 
@@ -71,67 +71,69 @@
 
 
 <!----------------- Parte frontal  ---------------------->
-    <main>
+    <main >
         <section class="con_transacao"> 
             <div class="con_transacao_form"> 
+
                 <div class="con_transacao_form_tipo">
 
                     
 
-                    <form action="post" >
-                    <!---------- Tipo transação------------->
-                    <label id="for_tipo" for="tipo_transação">Tipo de transação</label><br>
-                    <select id="escolha" name="tipo_transação"  >
-                    
-                        <optgroup label="Selecione"> 
+                
+                    <form onsubmit="testaFormulario(event)" method="post"   >
+                        <!---------- Tipo transação------------->
+                        <label id="for_tipo" for="tipo_transação">Tipo de transação</label><br>
+                        <select id="escolha" name="tipo_transação"  >
+                        
+                            <optgroup label="Selecione"> 
 
-                            <option value="compra">Compra</option>
-                            <option value="venda">Venda</option>
-                        </optgroup>
-
-
-                    </select>
-                </div>
+                                <option value="compra">Compra</option>
+                                
+                                <option value="venda">Venda</option>
+                            </optgroup>
 
 
-
-                <div class="mercadoria">
-
-
-                    <!----------- Nome da mercadoria   ----------->
-                    <label id="for_nome"  for="nome_mercadoria">Nome da mercadoria</label><br>
-                    <input type="text" id="nome_mercadoria-input"  onblur="TestaCampoMercadoria(event)" required  onfocus="this.value =''"  name="nome_mercadoria" placeholder="input" autocomplete="off" >
-                </div>
+                        </select>
+                        </div>
 
 
-                <div class="valor">
+                        <div class="mercadoria">
 
-                    
-                    <!----------- Valor da mercadoria ------------>
-                    <label for="valor_mercadoria">Valor</label><br>
-                    <input type="number" id="valor_mercadoria_input" onkeypress="TestaCampoValorNumeros(event)" onblur="TestaCampoValor(event)" onfocus="this.value =''" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00" required>
-                </div>
-
+                            <!----------- Nome da mercadoria   ----------->
+                            <label id="for_nome"  for="nome_mercadoria">Nome da mercadoria</label><br>
+                            <input type="text" id="nome_mercadoria-input"  required  onblur=" ValiMercadoria(event)" onfocus="this.value =''"  name="nome_mercadoria" placeholder="input" autocomplete="off" >
+                        </div>
 
 
-                <!------------ Botão ----------------->
-                <div class="botao">
-                    <button id="botao_estilo" type="submit"  onclick="TestaEnvio(event)" > Adicionar transação </button>
-                </div>
+                        <div class="valor">
+                            
+                            <!----------- Valor da mercadoria ------------>
+                            <label for="valor_mercadoria">Valor</label><br>
+                            <input type="text" id="valor_mercadoria_input"  required  onkeypress="keylogger(event)"  onblur="ValiValor(event)"   onfocus="this.value =''" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00"
+                            oncopy="return false"
+                            oncut="return false"
+                            onpaste="return false"
+                            ondrag="return false"
+                            ondrop="return false"
+                            
+                            />
+                        </div>
+
+                        <!------------ Botão ----------------->
+                        <div class="botao">
+                            <button id="botao_estilo" type="submit"   > Adicionar transação </button>
+                        </div>
+
+                    </form>   
+
             </div> 
-        </form>
-
-
-
-
-
 
         </section>
 
         <!----------------------------------- Area extrato    --------------------->
 
         <section class="con_extrato"> 
-            <div class="extrato">
+            <div class="extrato" >
 
                 <table class="extrato_lista">
                     <h1>Extrato de transações</h1>
@@ -139,78 +141,44 @@
                         <!-------- Parte de cima do extrato ------------->
                         <thead class="extrato_td">
                             <tr >
-                                <td  style="width: 50%;"  id="extrato_td_mercadoria">Mercadoria</td>
+                                <td  style="width: 50%;"  id="extrato_td_mercadoria">Mecadoria</td>
 
                                 <td  style="width: 50%;"  id="extrato_td_valor">valor</td>
                             </tr>
                         </thead>
+<!-------- Parte de frontal do extrato  "lista" ------------->
                 </table>
 
-
-
-
-                 <!-------- Parte de frontal do extrato  "lista" ------------->
-                 
                 <table  class="resumo">
-                    <tbody class="resumo_extrato">
+                    <tbody class="resumo_extrato"  >
                         
-
-                            
-                        <tr  class="resumo_extrato_item">  
-                            <td  id="item_nome"  style="width: 80%;" >+ Lorem ipsum dolor sit amet consectetur</td>
-                            <td  id="item_valor" style="width: 60%;"   >R$ 12.999,99</td>
-                        </tr>
-
-                   
-                        <tr  class="resumo_extrato_item">
-                            <td id="item_nome"  style="width: 70%;"    >- Quis nostrud exercitation</td>
-                            <td  id="item_valor" style="width: 60%;"    >R$ 99,99</td>
-                        </tr>
-
-                          
-                        <tr class="resumo_extrato_item">
-                            <td id="item_nome"  style="width: 70%;"    >+ lorem inpum</td>
-                            <td  id="item_valor" style="width: 60%;"    >R$ 9,99</td>
-                        </tr>
                     </tbody>
-                </table>
-
-
+                </table> 
 
                 <!-------- Parte baixa do extrato "resumo"  ------------->
-                <table class="total"> 
+                <table class="total" > 
 
-                    <tfoot class="total_resumo">
+                    <tfoot class="total_resumo"><!--- f-->
 
                         <tr class="total_resumo_valor">
-                            <th  id="total_resumo_item_total">Total</th> 
-                            <th  id="total_resumo_item_dinheiro">12.909,99</th> 
                         </tr>
-
-
-                        <tr>
-                            <th id="total_resumo_resultado" >[  LUCRO  ]</th>
-                        </tr>
-
-                    </tfoot>
-
+                    </tfoot >
                 </table>
-
             </div>
-
         </section>
-
     </main>
 
     <!----------- Linha do rodapé  ---------------->
 <footer>
     <div id="linha_horizontal"></div> 
 </footer>
+    <!-- JEST-->
+    <!--<script src="assets/javascript/package.json"></script>-->
     
-
-    <script src="assets/javascript/section1.js"></script>
-    <script src="assets/javascript/section2.js"></script>
-
+    <!--  validação e extrato -->
+    
+    <script src="assets/js/extrato.js"></script>
+    <script src="assets/js/validacao2.js"></script>
 
 </body>
 </html> 
