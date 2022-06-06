@@ -4,23 +4,23 @@
 /** Mercadoria */
 /* Mercadoria caso esteja vazio*/ 
 function  ValiMercadoria(){
-    const mercadoria = document.getElementById('nome_mercadoria-input')
+    const mercadoria = document.getElementById('nome_mercadoria-input');
   
     if(mercadoria.value == ''){
         mercadoria.style.border=" solid 2px red"
         mercadoria.placeholder = "Digite o nome do produto para cadastrar"
     }else{
         mercadoria.style.border=" solid 1px #979797"
-    }
+    };
     
     
     
-}
+};
 /**************************************************************************************/
 
 /*VALOR */
 /**Valor  caso esteja vazio */
-function ValiValor(e){
+function ValiValor(){
    
     const valor = document.getElementById('valor_mercadoria_input')
     if(valor.value == ''){
@@ -29,10 +29,10 @@ function ValiValor(e){
 
     }else{
         valor.style.border=" solid 1px #979797"
-  }
+  };
 
 
-}
+};
 
 
 /**************************************************************************************/
@@ -44,11 +44,11 @@ function ValiValor(e){
 /* Previnir letras   */
 function keylogger(log){
 
-  const numeros = /[^0-9]/
+  const numeros = /[^0-9]/;
   if(numeros.test(log.key)){
-    log.preventDefault()
+    log.preventDefault();
     return
-  }
+  };
 
   /*Formata o valor  */
   if (!log.target.value) return;
@@ -61,13 +61,13 @@ function keylogger(log){
     while (/([0-9]{4})[,|\.]/g.test(forma)) {
       forma = forma.replace(/([0-9]{1})$/g, ",$1");
       forma = forma.replace(/([0-9]{3})[,|\.]/g, ".$1");
-    }
-  }
+    };
+  };
 
 
   log.target.value = forma;
   
-}
+};
 
 
 

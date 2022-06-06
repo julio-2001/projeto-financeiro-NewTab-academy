@@ -1,14 +1,13 @@
-/*Coleta todos os items */
+/*Coleta todos os items e coloca no localStorage */
 function testaFormulario(ex){
-    try{
 
-    
+    /* T */
+    try{
     ex.preventDefault();
    
    const tipoRaw = ex.target.elements['escolha'].value;
    const mercadoriaRaw =  ex.target.elements['nome_mercadoria-input'].value;
-   var valorRaw = parseFloat( ex.target.elements['valor_mercadoria_input'].value)
-
+   const valorRaw = ex.target.elements['valor_mercadoria_input'].value;
 
 
    var listaRaw = localStorage.getItem('item');
@@ -22,26 +21,29 @@ function testaFormulario(ex){
         tipo:tipoRaw,
         mercadoria:mercadoriaRaw,
         valor:valorRaw
-    })
+
+        .replaceAll(".", "")
+      .replaceAll(",", ".")
+    });
     
-    ;
+    
 
     localStorage.setItem("item", JSON.stringify(listaProdutos) );
     listagemItem();
     }catch(err){
-        alert('Encontrado erro')
-        ResetaErro()
-    }
+        alert('Encontrado erro');
+        ResetaErro();
+    };
 };
 
 /**************************************************************************************//**************************************************************************************/
-/*Lista todos os items */
-function listagemItem(eve){
+/*Lista todos os items com as informações do localStorage */
+function listagemItem(){
 
     //try{
 
     
-    var contaBancaria = 0
+    var contaBancaria = 0;
     
 
 
@@ -56,7 +58,7 @@ function listagemItem(eve){
 
     currenLInes =[...document.querySelectorAll(' table.resumo tbody.resumo_extrato .resumo_extrato_item ')]
     currenLInes.forEach((element) => {
-        element.remove()
+        element.remove();
         
     });
 
@@ -65,9 +67,6 @@ function listagemItem(eve){
     /* Função que desenha a tabela com os valores informados */
 
     if(listaProdutos.length >= 1){
-
-    
-
 
     for(item in listaProdutos){
         document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML += ( `
@@ -101,28 +100,28 @@ function listagemItem(eve){
 
             function(){
                 
-                let transacao  = Number( listaProdutos[item].valor)
+                let transacao  = Number( listaProdutos[item].valor);
             
                 while(listaProdutos[item].tipo == 'compra'){
                     
-                    contaBancaria -= transacao
-                    console.log(contaBancaria)
-                    console.log(`soma  ${console.log(typeof(transacao))}`)
+                    contaBancaria -= transacao;
+                    console.log(contaBancaria);
+                    console.log(`soma  ${console.log(typeof(transacao))}`);
                     break
                     
-                }
+                };
                 while(listaProdutos[item].tipo == 'venda'){
                     
-                    contaBancaria += transacao
-                    console.log(contaBancaria)
-                    console.log(`soma  ${console.log(typeof(transacao))}`)
+                    contaBancaria += transacao;
+                    console.log(contaBancaria);
+                    console.log(`soma  ${console.log(typeof(transacao))}`);
                     break
 
-                }
+                };
             }
 
         )();
-    }
+    };
 
 
  }else if(listaProdutos.length === 0 ){
@@ -157,7 +156,7 @@ function listagemItem(eve){
 
             curren = [...document.querySelectorAll(' table.total tfoot.total_resumo .total_resumo_valor     ')];
             curren.forEach((element) =>{
-                element.remove()
+                element.remove();
             });
 
             document.querySelectorAll('table.total tfoot.total_resumo').item(0).innerHTML = (`
@@ -170,17 +169,17 @@ function listagemItem(eve){
 
 
             <tr>
-                <th id="total_resumo_resultado" >    ${(contaBancaria)  >= 1 ? "[LUCRO]":"[PREJUIZO]"}    </th>
+                <th id="total_resumo_resultado" >    ${(contaBancaria)  > 0 ? "[LUCRO]":"[PREJUIZO]"}    </th>
             </tr>
    
-            `)
+            `);
 
 
             console.log( document.querySelectorAll('table.total tfoot.total_resumo').item(0));
         }else{
             document.querySelectorAll('table.total tfoot.total_resumo').item(0).innerHTML = (`
-            `)
-        } 
+            `);
+        } ;
         }
         
     )();
@@ -247,7 +246,7 @@ function ResetaErro(){
     document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML = '';
     localStorage.clear("item");
     listaProdutos = [];
-    listagemItem()
+    listagemItem();
 
-}
+};
 /****************************************************************************************************************************************************************************/

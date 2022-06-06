@@ -223,6 +223,21 @@ border-top-width: 5px;
         margin-top: 463px;
     }
 
+    .resumo .resumo_extrato{
+
+        max-height:585px ;
+        overflow: auto;
+
+    }
+
+    .total{
+        margin-top: 570px;
+    }
+
+
+
+
+
 
 }
 
