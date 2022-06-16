@@ -27,7 +27,7 @@
                 <nav   id="menu_logo_hamburguer">
                    
                         <input type="checkbox" id="ativar">
-                        <label for="ativar" class="checkbtn" >
+                        <label for="ativar" class="checkbtn">
                             <i class="fas_fabars"> 
 
                                 
@@ -54,7 +54,7 @@
                             </label>
                             
 
-                            <li id="menu_navbar_lista_item1" ><a href="#"></a>Cadastrar transações </li> 
+                            <li id="menu_navbar_lista_item1" title="Você esta aqui" ><a href="#"></a>Cadastrar transações </li> 
                             <li id="menu_navbar_lista_item2" onclick="ResetDados(event)" ><a href="#"  ></a  >Limpar dados </li> 
                         </ul>    
                 </nav>
@@ -101,7 +101,7 @@
 
                             <!----------- Nome da mercadoria   ----------->
                             <label id="for_nome"  for="nome_mercadoria">Nome da mercadoria</label><br>
-                            <input type="text" id="nome_mercadoria-input"  required  onblur=" ValiMercadoria(event)" onfocus="this.value =''"  name="nome_mercadoria" placeholder="input" autocomplete="off" >
+                            <input type="text" id="nome_mercadoria-input" title="Adicione um produto"  tabindex="1" required  onblur=" ValiMercadoria(event)" onfocus="this.value =''"  name="nome_mercadoria" placeholder="input" autocomplete="off" maxlength="30" >
                         </div>
 
 
@@ -109,19 +109,18 @@
                             
                             <!----------- Valor da mercadoria ------------>
                             <label for="valor_mercadoria">Valor</label><br>
-                            <input type="text" id="valor_mercadoria_input"  required  onkeypress="keylogger(event)"  onblur="ValiValor(event)"   onfocus="this.value =''" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00"
+                            <input type="text" id="valor_mercadoria_input" title="Adicione um valor" tabindex="2" required  onkeypress="keylogger(event)"  onblur="ValiValor(event)"   onfocus="this.value =''" name="valor_mercadoria" autocomplete="off" placeholder="R$ 0,00" maxlength="10"
                             oncopy="return false"
                             oncut="return false"
                             onpaste="return false"
                             ondrag="return false"
                             ondrop="return false"
-                            
                             />
                         </div>
 
                         <!------------ Botão ----------------->
                         <div class="botao">
-                            <button id="botao_estilo" type="submit"   > Adicionar transação </button>
+                            <button id="botao_estilo" type="submit"  tabindex="3"  > Adicionar transação </button>
                         </div>
 
                     </form>   
@@ -178,7 +177,7 @@
     <!--  validação e extrato -->
     
     <script src="assets/js/extrato.js"></script>
-    <script src="assets/js/validacao2.js"></script>
+    <script src="assets/js/validacao.js"></script>
 
 </body>
 </html> 

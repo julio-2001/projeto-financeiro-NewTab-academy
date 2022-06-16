@@ -1,78 +1,79 @@
-/***************************** Mercadoria *****************************/
-/* Caso  mercadoria esteja vazio  * */
-function ValiMercadoria(ValiM){
+/*VALIDAÇÃO */
+
+
+/** Mercadoria */
+function  ValiMercadoria(){
+  
+  const mercadoria = document.getElementById('nome_mercadoria-input');
+  
+  if(mercadoria.value == ''){
     
-    const MaskM = document.getElementById('nome_mercadoria-input')
-    if(MaskM.value == ''){
-        MaskM.style.border = ' solid 2px red'
-        MaskM.placeholder =  'Digite um nome para cadastrar'
-        return false
-        
-    }else{
-        MaskM.style.border = ' solid 2px #979797'
-        return true
-        
-    }
+    /* Mercadoria caso esteja vazio*/ 
+    mercadoria.style.border=" solid 2px red"
+    mercadoria.placeholder = "Digite o nome do produto para cadastrar"
+
+  }else{
+
+    mercadoria.style.border=" solid 1px #979797"
+  };
     
-}
-/**********************************************************/
-
-/***************************** Valor *****************************/
-
-/* Caso  valor esteja vazio  * */
-function ValiValor(ValiV){
-    const MaskV = document.getElementById('valor_mercadoria_input')
-
     
-    if(MaskV.value == ''){
-        MaskV.style.border = ' solid 2px red'
-        
+    
+};
+/**************************************************************************************/
+
+/*VALOR */
+function ValiValor(){
+  
+  const valor = document.getElementById('valor_mercadoria_input')
+  if(valor.value == '' && valor.value == ',' , '.' ){
+    
+    /**Valor  caso esteja vazio ou caracteres nao permitidos */
+    valor.style.border=" solid 2px red"
+      
+
+  }
+  else{
+    valor.style.border=" solid 1px #979797"
+  };
+};
 
 
-        return false
-        
-        
-    }else{
-        MaskV.style.border = ' solid 2px #979797'
-        return true
-        
-    }
-}
+/**************************************************************************************/
 
 
 
 
-function Keylooger(es){
-    es.preventDefault()
+/**************************************************************************************/
+function keylogger(log){
+  
+  /* Previnir letras   */
+  const numeros = /[^0-9]/;
+  if(numeros.test(log.key)){
+    log.preventDefault();
+    return
+  };
 
-    if((/[0-9]+/g  ).test(es.key)){
-      const money = es.target.value += es.key
-          /*Formatação Valor*/  
+  
+  /*Formata o valor  */
+  if (!log.target.value) return;
+  forma = log.target.value.toString();
+  forma = forma.replace(/[\D]+/g, "");
+  forma = forma.replace(/([0-9 ]{1})$/g, ",$1");
 
 
-        if(money.length >= 3){
-
-        
-            while(money){
-                var format = new Intl.NumberFormat('pt-BR', {
-                    style: 'currency', 
-                    currency:'BRL',
-                    maximumFractionDigits: 2 }).format(money)      
-                    console.log(format)
-
-                break
-
-            }
-            
-            
-        }  
-
+  if (forma.length >= 6) {
+    while (/([0-9]{4})[,|\.]/g.test(forma)) {
+      forma = forma.replace(/([0-9]{1})$/g, ",$1");
+      forma = forma.replace(/([0-9]{3})[,|\.]/g, ".$1");
     };
+  };
 
+  log.target.value = forma;
+  
 };
 
 
 
+/**************************************************************************************/ 
 
-
-/**********************************************************/

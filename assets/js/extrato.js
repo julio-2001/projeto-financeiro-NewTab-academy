@@ -5,10 +5,12 @@ function testaFormulario(ex){
     try{
     ex.preventDefault();
    
+    
    const tipoRaw = ex.target.elements['escolha'].value;
    const mercadoriaRaw =  ex.target.elements['nome_mercadoria-input'].value;
    const valorRaw = ex.target.elements['valor_mercadoria_input'].value;
 
+   
 
    var listaRaw = localStorage.getItem('item');
    if(listaRaw != null){
@@ -34,6 +36,7 @@ function testaFormulario(ex){
         alert('Encontrado erro');
         ResetaErro();
     };
+   
 };
 
 /**************************************************************************************//**************************************************************************************/
@@ -142,8 +145,9 @@ function listagemItem(){
         
     </tr>`);
     };
-
  /**************************************************************************************//**************************************************************************************/
+
+
     (
         /* Funçao auto-chamada  "Inicia antes de iniciar a listagem"
         
@@ -183,10 +187,7 @@ function listagemItem(){
         }
         
     )();
-    //}catch(err){
-        //alert('Encontrado erro')
-        //ResetaErro()
-    //}
+   
 
 };
 
@@ -220,7 +221,7 @@ var formatter = new Intl.NumberFormat("pt-BR", {
 formatter.format(2500);
 
 
-//try{
+
 function formatterCurrency(value) {
     const valueFormat = value.toLocaleString("pt-BR", {
       style: "currency",
@@ -231,10 +232,6 @@ function formatterCurrency(value) {
     
     return valueFormat;
 }
-//}catch(err){
-   // alert('Encontrado um erro')
-   // ResetaErro()
-//}
 
 /****************************************************************************************************************************************************************************/
 
