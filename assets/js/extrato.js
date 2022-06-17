@@ -1,41 +1,32 @@
 /*Coleta todos os items e coloca no localStorage */
-function testaFormulario(ex){
-
-    /* T */
-    try{
-    ex.preventDefault();
-   
+function testaFormulario(dados){
+    dados.preventDefault();
     
-   const tipoRaw = ex.target.elements['escolha'].value;
-   const mercadoriaRaw =  ex.target.elements['nome_mercadoria-input'].value;
-   const valorRaw = ex.target.elements['valor_mercadoria_input'].value;
-
-   
-
-   var listaRaw = localStorage.getItem('item');
-   if(listaRaw != null){
-       var listaProdutos = JSON.parse(listaRaw);
+    var listaRaw = localStorage.getItem('item')
+    if(listaRaw != null && listaRaw != NaN ){
+        var listaProdutos = JSON.parse(listaRaw);
+    
     }else {
-       var listaProdutos =[];
-   };
+        var listaProdutos =[];
+    };
+
+    console.table(listaProdutos)
+
 
     listaProdutos.push({
-        tipo:tipoRaw,
-        mercadoria:mercadoriaRaw,
-        valor:valorRaw
+        tipo:dados.target.elements['escolha'].value,
+        mercadoria:dados.target.elements['nome_mercadoria-input'].value,
+        valor:dados.target.elements['valor_mercadoria_input'].value
 
         .replaceAll(".", "")
-      .replaceAll(",", ".")
+        .replaceAll(",", ".")
     });
-    
-    
 
+    console.log(typeof(valor))
+    
+ 
     localStorage.setItem("item", JSON.stringify(listaProdutos) );
     listagemItem();
-    }catch(err){
-        alert('Encontrado erro');
-        ResetaErro();
-    };
    
 };
 
@@ -43,21 +34,15 @@ function testaFormulario(ex){
 /*Lista todos os items com as informações do localStorage */
 function listagemItem(){
 
-    //try{
-
-    
     var contaBancaria = 0;
     
-
-
     var listaRaw = localStorage.getItem('item')
-    if(listaRaw != null){
+    if(listaRaw != null && listaRaw != NaN ){
         var listaProdutos = JSON.parse(listaRaw);
     
     }else {
         var listaProdutos =[];
     };
-
 
     currenLInes =[...document.querySelectorAll(' table.resumo tbody.resumo_extrato .resumo_extrato_item ')]
     currenLInes.forEach((element) => {
@@ -71,130 +56,128 @@ function listagemItem(){
 
     if(listaProdutos.length >= 1){
 
-    for(item in listaProdutos){
-        document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML += ( `
-        <tr  class="resumo_extrato_item">
+        for(item in listaProdutos){
+            document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML += ( `
+            <tr  class="resumo_extrato_item">
 
-            <td >
+                <td >
             
-                ${listaProdutos[item].tipo == 'compra'?'-':'+' }
+                    ${listaProdutos[item].tipo == 'compra'?'-':'+' }
                 
-            </td>
+                </td>
 
-            <td id="item_nome"  style="width: 70%;">
+
+                <td id="item_nome"  style="width: 70%;">
             
-                ${listaProdutos[item].mercadoria}
+                    ${listaProdutos[item].mercadoria}
 
-            </td>
+                </td>
 
             
-            <td  id="item_valor" style="width: 60%;">
+                <td  id="item_valor" style="width: 60%;">
 
-               ${formatterCurrency(Number( listaProdutos[item].valor)) }
+                    ${formatterCurrency(Number( listaProdutos[item].valor)) }
             
-            </td>
+                </td>
 
-        </tr>`);
+            </tr>`);
 
 
-        /**************************************************************************************//**************************************************************************************/
-        /*Função calcula o resultado da transação */
-        (
-
-            function(){
+            /**************************************************************************************//**************************************************************************************/
+            /*Função calcula o resultado da transação */
+          
+            (function(){
                 
                 let transacao  = Number( listaProdutos[item].valor);
             
-                while(listaProdutos[item].tipo == 'compra'){
-                    
+                
+                if(listaProdutos[item].tipo == 'compra'){
+                        
                     contaBancaria -= transacao;
-                    console.log(contaBancaria);
-                    console.log(`soma  ${console.log(typeof(transacao))}`);
-                    break
+                    return
                     
-                };
-                while(listaProdutos[item].tipo == 'venda'){
+
+                }
+
+
+                else if(listaProdutos[item].tipo == 'venda'){
                     
                     contaBancaria += transacao;
-                    console.log(contaBancaria);
-                    console.log(`soma  ${console.log(typeof(transacao))}`);
-                    break
+                    return
+
 
                 };
-            }
-
-        )();
-    };
-
-
- }else if(listaProdutos.length === 0 ){
-    
-    /************************************   Caso Nenhuma transação seja feita  **************************************************/
-
-    document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML += ( `
-    <tr  class="resumo_extrato_item" style="display:flex;">
-
-    
-        <td style="margin:auto ;"   >
         
-            <h1 >    
-                Suas transações apareceram aqui
-            </h1>
+            }());
+
+        };
+
+    } else if (listaProdutos.length === 0 ){
+    
+        /************************************   Caso Nenhuma transação seja feita  **************************************************/
+
+        document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML += ( `
+            <tr  class="resumo_extrato_item" style="display:flex;">
+
+    
+                <td style="margin:auto ;"   >
+        
+                    <h1 >    
+                        Suas transações apareceram aqui
+                    </h1>
             
-        </td>
-        
-    </tr>`);
+                </td>
+            </tr>`
+
+        );   
     };
  /**************************************************************************************//**************************************************************************************/
 
 
-    (
-        /* Funçao auto-chamada  "Inicia antes de iniciar a listagem"
-        
-        Responsavel por somar o total e desenha na tela
-        
-        */
-        function(){
+    
+    /*
+    Lista as transaçóes cadastradas na pagina
+    */
+    (function(){
             
-            if(listaProdutos.length >= 1){
+        if(listaProdutos.length >= 1){
 
             curren = [...document.querySelectorAll(' table.total tfoot.total_resumo .total_resumo_valor     ')];
             curren.forEach((element) =>{
                 element.remove();
             });
 
+
             document.querySelectorAll('table.total tfoot.total_resumo').item(0).innerHTML = (`
 
-            <tr class="total_resumo_valor">
-                <th  id="total_resumo_item_total"> TOTAL </th> 
-                <th  id="total_resumo_item_dinheiro">     ${ formatterCurrency(Number(contaBancaria))}    </th> 
+                <tr class="total_resumo_valor">
+                    <th  id="total_resumo_item_total"> TOTAL </th> 
+                    <th  id="total_resumo_item_dinheiro">     ${ formatterCurrency(Number(contaBancaria))}    </th> 
                 
-            </tr>
+                </tr>
 
 
-            <tr>
-                <th id="total_resumo_resultado" >    ${(contaBancaria)  > 0 ? "[LUCRO]":"[PREJUIZO]"}    </th>
-            </tr>
+                <tr>
+                    <th id="total_resumo_resultado" >    ${(contaBancaria)  > 0 ? "[LUCRO]":"[PREJUIZO]"}    </th>
+                </tr>`
    
-            `);
 
+            );
 
-            console.log( document.querySelectorAll('table.total tfoot.total_resumo').item(0));
-        }else{
-            document.querySelectorAll('table.total tfoot.total_resumo').item(0).innerHTML = (`
-            `);
-        } ;
-        }
-        
-    )();
-   
+        } else {
+            document.querySelectorAll('table.total tfoot.total_resumo').item(0).innerHTML = (``);
+     
+
+        };
+
+    })();
 
 };
 
 listagemItem();
 /**************************************************************************************//**************************************************************************************/
 /* Apaga todos os dados  */
-function ResetDados(clear){
+function ResetDados(){
     
     let clearT = confirm('Deseja LIMPAR todos os DADOS?');
     
@@ -205,9 +188,7 @@ function ResetDados(clear){
         document.querySelectorAll( 'table.resumo tbody.resumo_extrato ').item(0).innerHTML = '';
         localStorage.clear("item");
         listaProdutos = [];
-    }else{ 
     };
-
    listagemItem();
 };
 
@@ -229,7 +210,6 @@ function formatterCurrency(value) {
       maximumFractionDigits:2,
       
     });
-    
     return valueFormat;
 }
 
