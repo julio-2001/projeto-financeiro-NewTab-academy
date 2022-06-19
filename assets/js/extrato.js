@@ -10,7 +10,7 @@ function testaFormulario(dados){
         var listaProdutos =[];
     };
 
-    console.table(listaProdutos)
+    console.table(listaProdutos);
 
 
     listaProdutos.push({
@@ -22,10 +22,9 @@ function testaFormulario(dados){
         .replaceAll(",", ".")
     });
 
-    console.log(typeof(valor))
     
- 
-    localStorage.setItem("item", JSON.stringify(listaProdutos) );
+    localStorage.setItem("item", JSON.stringify(listaProdutos));
+
     listagemItem();
    
 };
@@ -36,9 +35,9 @@ function listagemItem(){
 
     var contaBancaria = 0;
     
-    var listaRaw = localStorage.getItem('item')
+    var listaRaw = localStorage.getItem('item');
     if(listaRaw != null && listaRaw != NaN ){
-        var listaProdutos = JSON.parse(listaRaw);
+       var listaProdutos = JSON.parse(listaRaw);
     
     }else {
         var listaProdutos =[];
@@ -89,8 +88,6 @@ function listagemItem(){
             (function(){
                 
                 let transacao  = Number( listaProdutos[item].valor);
-            
-                
                 if(listaProdutos[item].tipo == 'compra'){
                         
                     contaBancaria -= transacao;
